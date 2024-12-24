@@ -2765,3 +2765,36 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.dropdown ul li {
+  padding: 2px 2px;
+}
+
+.dropdown ul li a {
+  text-decoration: none;
+  color: #333;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 500px; /* Batas lebar untuk teks */
+  display: block;
+}
