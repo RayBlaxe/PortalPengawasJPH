@@ -1,0 +1,50 @@
+{
+  "kategori": [
+    { "name": "Regulasi Umum", "count": 5 },
+    { "name": "Proses Sertifikasi", "count": 7 },
+    { "name": "Produk Halal", "count": 6 },
+    { "name": "Pengawasan", "count": 4 }
+  ],
+  "items": [
+    {
+      "title": "Undang-Undang Nomor 33 Tahun 2014 tentang Jaminan Produk Halal",
+      "category": "Regulasi Umum",
+      "views": 200,
+      "downloads": 100,
+      "date": "2024-11-01",
+      "pdfUrl": "https://drive.google.com/uc?export=download&id=1abuzJdaGfnykAHlbzp1Oeli1O25h8-Xw"
+    },
+    {
+      "title": "Peraturan Pemerintah Nomor 39 Tahun 2021 tentang Penyelenggaraan Jaminan Produk Halal",
+      "category": "Regulasi Umum",
+      "views": 150,
+      "downloads": 80,
+      "date": "2024-10-15",
+      "pdfUrl": "https://drive.google.com/uc?export=download&id=1abuzJdaGfnykAHlbzp1Oeli1O25h8-Xw"
+    },
+    {
+      "title": "Keputusan Menteri Agama Nomor 982 Tahun 2021 tentang Proses Sertifikasi Halal",
+      "category": "Proses Sertifikasi",
+      "views": 180,
+      "downloads": 120,
+      "date": "2024-09-10",
+      "pdfUrl": "https://drive.google.com/uc?export=download&id=1abuzJdaGfnykAHlbzp1Oeli1O25h8-Xw"
+    },
+    {
+      "title": "Standar Nasional Indonesia (SNI) untuk Produk Halal",
+      "category": "Produk Halal",
+      "views": 220,
+      "downloads": 140,
+      "date": "2024-08-25",
+      "pdfUrl": "https://drive.google.com/uc?export=download&id=1abuzJdaGfnykAHlbzp1Oeli1O25h8-Xw"
+    },
+    {
+      "title": "Pedoman Pengawasan Produk Halal oleh BPJPH",
+      "category": "Pengawasan",
+      "views": 130,
+      "downloads": 60,
+      "date": "2024-07-30",
+      "pdfUrl": "https://drive.google.com/uc?export=download&id=1abuzJdaGfnykAHlbzp1Oeli1O25h8-Xw"
+    }
+  ]
+}

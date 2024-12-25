@@ -87,6 +87,10 @@ h6 {
   font-family: var(--heading-font);
 }
 
+h7 {
+  font-size: 1rem; /* Sesuaikan ukuran font sesuai kebutuhan */
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -2694,4 +2698,35 @@ section,
   word-break: break-word;
   max-width: 500px; /* Batas lebar untuk teks */
   display: block;
+}
+
+
+#kategori-list li:hover {
+  color: #670075; /* Mengubah warna teks saat dihover */
+  background-color: #f1f1f1; /* Mengubah warna latar belakang saat dihover */
+}
+
+/* Styling untuk tabel */
+.table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+/* Hover effect untuk card */
+.card {
+  transition: transform 0.2s;
+  box-shadow: none !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: none !important;
+}
+.icon {
+  color: #670075;
 }
