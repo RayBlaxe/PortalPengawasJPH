@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Jabatan Fungsional Pengawas JPH</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
   
+
 
   <!-- Favicons -->
   <link href="assets/img/logo_primary_purple.png" rel="icon">
@@ -35,8 +34,10 @@
     }
 
     .header.scrolled {
-      background-color: #ffffff; /* Latar belakang putih */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+      background-color: #ffffff;
+      /* Latar belakang putih */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* Bayangan lembut */
     }
   </style>
 </head>
@@ -69,7 +70,6 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
       <a class="btn-getstarted flex-md-shrink-0" href="https://ringwas.halal.go.id/login">Login</a>
 
     </div>
@@ -98,6 +98,16 @@
     </div>
   </main>
 
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -107,12 +117,12 @@
   <!-- Main JS File -->
   <script>
     // Mobile Navigation Toggle
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const navMenu = document.querySelector('.navmenu ul');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
 
-mobileNavToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
+    mobileNavToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
 
     // Inisialisasi AOS (Animate On Scroll)
     AOS.init({
@@ -142,7 +152,7 @@ mobileNavToggle.addEventListener('click', () => {
               ${k.name}
             </li>
           `)
-          .join(''); 
+          .join('');
 
         // Tampilkan semua item secara default
         displayItems(data.items);

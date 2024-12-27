@@ -12,15 +12,13 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --default-color: #670075; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #670075; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #670075; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -77,18 +75,13 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+h1, h2, h3, h4, h5, h6, a, button, input, textarea, select {
+  font-family: var(--nav-font);
 }
 
-h7 {
-  font-size: 1rem; /* Sesuaikan ukuran font sesuai kebutuhan */
+p {
+  font-family: "Poppins", sans-serif;
+  color: #808080; /* Warna abu-abu */
 }
 
 /* PHP Email Form Messages
@@ -168,6 +161,7 @@ h7 {
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+  font-family: var(--nav-font);
 }
 
 .header .btn-getstarted,
@@ -533,106 +527,89 @@ h7 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #e2e2e7;
+  border-radius: 20px;
+  padding: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: var(--nav-font);
+}
+.footer-section {
+  margin-bottom: 20px;
+}
+.footer h3 {
+  font-size: 22px;
+  color: #670075;
+  margin-bottom: 20px;
+}
+.footer input,
+.footer button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--nav-font);
+}
+.footer input {
+  background-color: #fff;
+  font-family: var(--nav-font);
+}
+.footer button {
+  background-color: #000;
+  color: #fff;
   font-size: 14px;
-  padding-bottom: 50px;
-  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: var(--nav-font);
+}
+.footer button:hover {
+  background-color: #670075;
+}
+.footer p {
+  font-family: var(--nav-font);
 }
 
-.footer .footer-top {
-  padding-top: 50px;
-}
 
-.footer .social-links a {
+.alert {
+  padding: 10px;
+  background-color: #e6ffed;
+  border: 1px solid #a6d9a9;
+  color: #2e7d32;
+  border-radius: 50px;
+  margin-top: 10px;
+  text-align: center;
+}
+.icons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
-  font-size: 16px;
-  color: var(--accent-color);
-  margin-right: 10px;
-  transition: 0.3s;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.icons svg {
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+.icons a:hover svg {
+  fill: #670075;
 }
 
-.footer .social-links a:hover {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
+.rounded-full {
+  border-radius: 50px;
 }
-
-.footer h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
+.hover-bg-red:hover {
+  background-color: #EF4335;
+  color: white;
 }
-
-.footer .footer-links {
-  margin-bottom: 30px;
+.hover-text-red:hover {
+  color: #EF4335;
 }
-
-.footer .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer .footer-links ul i {
-  margin-right: 3px;
-  font-size: 12px;
-  line-height: 0;
-  color: var(--accent-color);
-}
-
-.footer .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-.footer .footer-links ul a {
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: var(--accent-color);
-}
-
-.footer .footer-about a {
-  color: var(--heading-color);
-  font-size: 24px;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer .copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 6px;
-  font-size: 13px;
+.text-red {
+  color: #EF4335;
 }
 
 /*--------------------------------------------------------------
@@ -761,7 +738,7 @@ section,
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
-  font-family: var(--default-font);
+  font-family: var(--nav-font);
 }
 
 .section-title p {
@@ -769,7 +746,7 @@ section,
   margin: 10px 0 0 0;
   font-size: 32px;
   font-weight: 700;
-  font-family: var(--heading-font);
+  font-family: var(--nav-font);
 }
 
 .section-title p .description-title {
@@ -795,6 +772,7 @@ section,
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+  font-family: var(--nav-font);
 }
 
 .hero p {
@@ -802,6 +780,7 @@ section,
   margin: 5px 0 30px 0;
   font-size: 20px;
   font-weight: 400;
+  font-family: var(--nav-font);
 }
 
 .hero .animated {
