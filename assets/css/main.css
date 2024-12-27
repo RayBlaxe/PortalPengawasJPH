@@ -2730,3 +2730,26 @@ section,
 .icon {
   color: #670075;
 }
+/* Motion Effect */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos][data-aos-in] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar scroll effect */
+.header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: #ffffff; /* Latar belakang putih */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+
