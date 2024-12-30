@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rekomendasi Formasi Jabatan Fungsional Pengawasan JPH</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo_primary_purple.png" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Styling untuk tabel */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Styling untuk header tabel */
+    table th {
+      background-color: #670075;
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Styling untuk sel tabel */
+    table td {
+      padding: 12px 15px;
+      text-align: left;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Styling untuk baris tabel saat hover */
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    table tr:hover {
+      background-color: #ddd;
+    }
+
+    /* Styling untuk cell ketika hover */
+    table td:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    /* Styling untuk border pada tabel */
+    table th, table td {
+      border: 1px solid #ddd;
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo1.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda<br></a></li>
+          <li><a href="produk.html">Produk Hukum</a></li>
+          <li><a href="#services">Data</a></li>
+          <li class="dropdown"><a href="#" class="active"><span>Informasi dan Layanan</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Pengumuman</a></li>
+              <li><a href="#">Inpassing</a></li>
+              <li><a href="#">Tata Cara Perhitungan Kebutuhan Jabatan Fungsional Pengawasan JPH</a></li>
+              <li><a href="rekomFormasi.html">Rekomendasi Formasi Jabatan Fungsional Pengawasan JPH</a></li>
+              <li><a href="diklat.html">Diklat</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted flex-md-shrink-0" href="https://ringwas.halal.go.id/login">Login</a>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="margin-top: 120px;">
+    <div class="container mt-5">
+      <h1>Rekomendasi Formasi Jabatan Fungsional Pengawasan JPH</h1>
+      <p>Berikut adalah rekomendasi formasi jabatan yang tersedia:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama Formasi</th>
+            <th>Kode Formasi</th>
+            <th>Kebutuhan Formasi</th>
+            <th>Lokasi</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="formasiTable">
+          <!-- Data akan dimasukkan di sini -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    // Fungsi untuk memuat data dari rekomFormasi.json
+    fetch('data/rekomFormasi.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Gagal memuat data');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const tableBody = document.getElementById('formasiTable');
+        data.forEach(item => {
+          const row = `
+            <tr>
+              <td>${item.nama_formasi}</td>
+              <td>${item.kode_formasi}</td>
+              <td>${item.kebutuhan_formasi}</td>
+              <td>${item.lokasi}</td>
+              <td>${item.status}</td>
+            </tr>
+          `;
+          tableBody.insertAdjacentHTML('beforeend', row);
+        });
+      })
+      .catch(error => console.error('Terjadi kesalahan:', error));
+  </script>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+      "nama_formasi": "Pengawas Halal Ahli",
+      "kode_formasi": "PHA-01",
+      "kebutuhan_formasi": "50 orang",
+      "lokasi": "Provinsi Jawa Barat",
+      "status": "Aktif"
+    },
+    {
+      "nama_formasi": "Pengawas Halal Madya",
+      "kode_formasi": "PHM-02",
+      "kebutuhan_formasi": "30 orang",
+      "lokasi": "Provinsi Jawa Timur",
+      "status": "Aktif"
+    }
+]
+  

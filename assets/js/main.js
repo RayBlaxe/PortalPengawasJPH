@@ -206,5 +206,18 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-
+  
 })();
+
+function highlightActiveLink() {
+  const navLinks = document.querySelectorAll('.navmenu .nav-link');
+  const currentPath = window.location.pathname.split('/').pop();
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}

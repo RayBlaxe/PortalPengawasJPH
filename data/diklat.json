@@ -1,0 +1,21 @@
+[
+    {
+      "nama_diklat": "Pelatihan Dasar Pengawasan Halal",
+      "tanggal": "10-12 Januari 2025",
+      "lokasi": "BPJPH Pusat",
+      "jumlah_peserta": "30 orang"
+    },
+    {
+      "nama_diklat": "Workshop Sertifikasi Halal",
+      "tanggal": "15-17 Februari 2025",
+      "lokasi": "Bandung, Jawa Barat",
+      "jumlah_peserta": "25 orang"
+    },
+    {
+      "nama_diklat": "Peningkatan Kompetensi Pengawas",
+      "tanggal": "20-22 Maret 2025",
+      "lokasi": "Surabaya, Jawa Timur",
+      "jumlah_peserta": "40 orang"
+    }
+  ]
+  
