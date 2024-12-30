@@ -1,0 +1,23 @@
+{
+    "announcements": [
+      {
+        "title": "Pengumuman 1",
+        "date": "2024-12-30",
+        "category": "Kategori 1",
+        "link": "pengumuman1.pdf"
+      },
+      {
+        "title": "Pengumuman 2",
+        "date": "2024-12-29",
+        "category": "Kategori 2",
+        "link": "pengumuman2.pdf"
+      },
+      {
+        "title": "Pengumuman 3",
+        "date": "2024-12-28",
+        "category": "Kategori 3",
+        "link": "pengumuman3.pdf"
+      }
+    ]
+  }
+  

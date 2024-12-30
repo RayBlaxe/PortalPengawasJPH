@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Pengumuman JPH</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/logo_primary_purple.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Navbar scroll effect */
+    .header {
+      background-color: transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 10px 20px;
+    }
+
+    .header.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top" data-aos="fade-down">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo1.png" alt="Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="produk.html">Produk Hukum</a></li>
+          <li><a href="#services">Data</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Informasi dan Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="announcement.html" class="active">Pengumuman</a></li>
+              <li><a href="#">Inpassing</a></li>
+              <li><a href="#">Tata Cara Perhitungan Kebutuhan Jabatan</a></li>
+              <li><a href="#">Rekomendasi Formasi Jabatan</a></li>
+              <li><a href="#">Diklat</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted flex-md-shrink-0" href="https://ringwas.halal.go.id/login">Login</a>
+    </div>
+  </header>
+  <br><br><br>
+
+  <main class="main container py-5">
+    <div class="row">
+      <!-- Sidebar Kategori -->
+      <div class="col-lg-3" data-aos="fade-right">
+        <h2 class="mb-4">Kategori Pengumuman</h2>
+        <ul class="list-group" id="kategori-list">
+          <!-- Kategori akan dimuat dari JSON -->
+        </ul>
+      </div>
+
+      <!-- Konten Utama -->
+      <div class="col-lg-9" data-aos="fade-up">
+        <h2 class="mb-4">Pengumuman Terkini</h2>
+        <div id="announcement-list" class="list-group" data-aos="zoom-in">
+          <!-- Data pengumuman akan dimuat dari JSON -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
+
+    mobileNavToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Inisialisasi AOS (Animate On Scroll)
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('#header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    // Fetch data dan populate kategori dan pengumuman
+    async function fetchAnnouncements() {
+      try {
+        const response = await fetch('data_pengumuman.json');
+        if (!response.ok) throw new Error('Gagal mengambil data JSON');
+        const data = await response.json();
+
+        // Tampilkan kategori
+        const kategoriList = document.getElementById('kategori-list');
+        kategoriList.innerHTML = data.kategori
+          .map(k => `
+            <li class="list-group-item list-group-item-action" onclick="filterAnnouncements('${k.name}')">
+              ${k.name}
+            </li>
+          `)
+          .join('');
+
+        // Tampilkan semua pengumuman secara default
+        displayAnnouncements(data.announcements);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    function filterAnnouncements(categoryName) {
+      fetch('announcements.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Gagal mengambil data JSON');
+          return response.json();
+        })
+        .then(data => {
+          const filteredAnnouncements = data.announcements.filter(announcement => announcement.category === categoryName);
+          displayAnnouncements(filteredAnnouncements);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function displayAnnouncements(announcements) {
+      const announcementList = document.getElementById('announcement-list');
+      announcementList.innerHTML = announcements
+        .map(announcement => `
+          <a href="${announcement.link}" target="_blank" class="list-group-item list-group-item-action">
+            <h5>${announcement.title}</h5>
+            <p><strong>Tanggal:</strong> ${new Date(announcement.date).toLocaleDateString('id-ID')} <br>
+              <strong>Kategori:</strong> ${announcement.category}
+            </p>
+          </a>
+        `)
+        .join('');
+    }
+
+    window.onload = fetchAnnouncements;
+  </script>
+</body>
+
+</html>
