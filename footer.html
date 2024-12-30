@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container mx-auto mt-5">
+    <div class="bg-light rounded-3 p-4">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h3 class="fw-bold">Alamat</h3>
+          <p>
+            Jl. Raya Pd. Gede No.13, RW.1, Pinang Ranti, Kec Makasar, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13560
+          </p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3 class="fw-bold">Ikuti Kami</h3>
+          <div class="d-flex gap-3 mb-3">
+            <i class="bi bi-facebook fs-3"></i>
+            <i class="bi bi-instagram fs-3"></i>
+            <i class="bi bi-youtube fs-3"></i>
+            <i class="bi bi-twitter fs-3"></i>
+          </div>
+          <p class="bold text-large"><i class="bi bi-whatsapp icon-large"></i> +62811-8010-3146</p>
+          <p class="bold text-large"><i class="bi bi-envelope icon-large"></i> layanan@kemenag.go.id</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="fw-bold">Hubungi Kami</h3>
+          <form id="contactForm">
+            <input type="text" id="name" class="form-control mb-2 rounded-full" placeholder="Nama Lengkap">
+            <small id="nameError" class="text-danger"></small>
+            <input type="text" id="phone" class="form-control mb-2 rounded-full" placeholder="No HP">
+            <small id="phoneError" class="text-danger"></small>
+            <input type="text" id="message" class="form-control mb-2 rounded-full" placeholder="Pesan">
+            <small id="messageError" class="text-danger"></small>
+            <button type="button" id="submitBtn" class="btn btn-dark w-100 rounded-full mt-2">Kirim Pesan</button>
+            <div id="successMessage" class="text-success mt-2" style="display: none;">Pesan berhasil dikirim!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="py-4">
+    </div>
+  </div>
+</body>
+
+</html>
