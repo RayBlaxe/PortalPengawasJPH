@@ -574,6 +574,23 @@ p {
   font-family: var(--nav-font);
 }
 
+.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.text-danger {
+  font-size: 0.875em;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
+.text-success {
+  font-size: 1em;
+  font-weight: bold;
+  color: #28a745;
+}
+
 
 .alert {
   padding: 10px;
@@ -611,6 +628,7 @@ p {
 .text-red {
   color: #EF4335;
 }
+
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -2484,6 +2502,7 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -2702,6 +2721,7 @@ section,
 /* Styling untuk tabel */
 .table {
   background: white;
+  font-family: var(--default-font);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -2741,8 +2761,50 @@ section,
 }
 
 .header.scrolled {
-  background-color: #ffffff; /* Latar belakang putih */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  background-color: #ffffff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-link.active {
+  color: #3dc1a2;
+}
+
+.table-color th {
+  background-color: #670075 !important;
+  color: white !important;
 }
 
 
+@media (max-width: 768px) {
+  table {
+      display: block;
+      width: 100%;
+  }
+  table thead {
+      display: none;
+  }
+  table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+  }
+  table td {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: none;
+  }
+  table td:nth-child(odd) {
+      background-color: #d4f4dd;
+      font-weight: bold;
+      padding: 10px;
+  }
+  table td img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+  }
+}
