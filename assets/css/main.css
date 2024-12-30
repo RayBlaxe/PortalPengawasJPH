@@ -686,6 +686,7 @@ h6 {
   font-size: 13px;
 }
 
+
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
@@ -2589,6 +2590,7 @@ section,
   color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
 
 /*--------------------------------------------------------------
 # Widgets

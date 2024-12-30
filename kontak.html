@@ -126,48 +126,145 @@
           <div class="container" data-aos="fade-up" data-aos-delay="100">
           
             <div class="row gy-4">
-              <!-- Bagian kiri (Email dan Hubungi Kami) -->
-              <div class="col-lg-6">
-                <div class="row gy-4">
-                  <!-- Email -->
-                  <div class="col-md-6">
-                    <div class="info-item" data-aos="fade" data-aos-delay="300">
-                      <i class="bi bi-envelope"></i>
-                      <h3>Email</h3>
-                      <p>Email: layanan@kemenag.go.id</p>
-                    </div>
-                  </div><!-- End Info Item -->
-          
-                  <!-- Hubungi Kami -->
-                  <div class="col-md-6">
-                    <div class="info-item" data-aos="fade" data-aos-delay="300">
-                      <i class="bi bi-telephone"></i>
-                      <h3>Telepon</h3>
-                      <p>Telp: 146</p>
-                      <p>Whatsapp: +62811-8010-3146</p>
-                    </div>
-                  </div><!-- End Info Item -->
-                </div>
-              </div>
-          
-              <!-- Bagian kanan (Google Maps) -->
-              <div class="col-lg-6">
-                <div class="maps-container" data-aos="fade" data-aos-delay="300">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.6347075636783!2d106.8836631!3d-6.2901396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f298e7dcf927%3A0x771c58a469b9969d!2sBadan%20Penyelenggara%20Jaminan%20Produk%20Halal!5e0!3m2!1sen!2sid!4v1696948553580!5m2!1sen!2sid"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
+           <!-- Contact Section Start -->
+<div class="contact-section">
+  <div class="container">
+    <div class="row no-gutters">
+
+      <!-- Left Section (Email and Contact Information) -->
+      <div class="col-lg-6">
+        <div class="row gy-4">
+          <style>
+            .info-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 15px;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              background-color: #f9f9f9;
+              max-width: 400px;
+              margin: 0 auto;
+            }
+
+            .info-item i {
+              font-size: 1.75rem;
+              color: #6c63ff;
+              margin-bottom: 8px;
+            }
+
+            .info-item h3 {
+              font-size: 1.1rem;
+              margin-bottom: 8px;
+            }
+
+            .info-item p {
+              margin: 0;
+              font-size: 0.9rem;
+            }
+          </style>
+
+          <!-- Email -->
+          <div class="col-12">
+            <div class="info-item" data-aos="fade" data-aos-delay="300">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p>Email: layanan@kemenag.go.id</p>
             </div>
-          </div>
-          
-      
+          </div><!-- End Info Item -->
+
+          <!-- Hubungi Kami -->
+          <div class="col-12">
+            <div class="info-item" data-aos="fade" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Telepon</h3>
+              <p>Telp: 146</p>
+              <p>Whatsapp: +62811-8010-3146</p>
+            </div>
+          </div><!-- End Info Item -->
+
         </div>
       </div>
-      
-          
+
+      <!-- Right Section (Google Maps) -->
+      <div class="col-lg-6">
+        <div class="maps-container" data-aos="fade" data-aos-delay="300">
+          <style>
+            .maps-container iframe {
+              width: 100%;
+              height: 420px;
+              border: 0;
+            }
+          </style>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.6347075636783!2d106.8836631!3d-6.2901396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f298e7dcf927%3A0x771c58a469b9969d!2sBadan%20Penyelenggara%20Jaminan%20Produk%20Halal!5e0!3m2!1sen!2sid!4v1696948553580!5m2!1sen!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Contact Section End -->
+
+<style>
+  /* Remove any gaps between the left and right sections */
+  .contact-section {
+    width: 100%;
+    padding: 30px;
+  }
+
+  /* Remove the gutters between columns */
+  .no-gutters {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  /* Ensure the columns take equal width */
+  .col-lg-6 {
+    padding: 0;
+  }
+
+  /* Custom styles for info items */
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .info-item i {
+    font-size: 1.75rem;
+    color: #6c63ff;
+    margin-bottom: 8px;
+  }
+
+  .info-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .info-item p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+</style>
 
         </div>
 
