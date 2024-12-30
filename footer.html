@@ -46,6 +46,67 @@
     <div class="py-4">
     </div>
   </div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+  
+      let isValid = true;
+  
+      // Reset feedback styles
+      const inputs = document.querySelectorAll('#contactForm input');
+      inputs.forEach(input => input.classList.remove('is-invalid'));
+  
+      // Validasi Nama
+      if (!name) {
+        document.getElementById('nameError').textContent = 'Nama tidak boleh kosong';
+        document.getElementById('name').classList.add('is-invalid');
+        isValid = false;
+      } else {
+        document.getElementById('nameError').textContent = '';
+      }
+  
+      // Validasi No HP (Format sederhana: hanya angka)
+      const phoneRegex = /^[0-9]+$/;
+      if (!phone) {
+        document.getElementById('phoneError').textContent = 'No HP tidak boleh kosong';
+        document.getElementById('phone').classList.add('is-invalid');
+        isValid = false;
+      } else if (!phoneRegex.test(phone)) {
+        document.getElementById('phoneError').textContent = 'No HP harus berupa angka';
+        document.getElementById('phone').classList.add('is-invalid');
+        isValid = false;
+      } else {
+        document.getElementById('phoneError').textContent = '';
+      }
+  
+      // Validasi Pesan (Panjang minimal 10 karakter)
+      if (!message) {
+        document.getElementById('messageError').textContent = 'Pesan tidak boleh kosong';
+        document.getElementById('message').classList.add('is-invalid');
+        isValid = false;
+      } else if (message.length < 10) {
+        document.getElementById('messageError').textContent = 'Pesan harus minimal 10 karakter';
+        document.getElementById('message').classList.add('is-invalid');
+        isValid = false;
+      } else {
+        document.getElementById('messageError').textContent = '';
+      }
+  
+      // Jika valid, tampilkan pesan sukses
+      if (isValid) {
+        document.getElementById('successMessage').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('contactForm').reset();
+          document.getElementById('successMessage').style.display = 'none';
+          inputs.forEach(input => input.classList.remove('is-invalid'));
+        }, 3000);
+      }
+    });
+  </script>  
+
 </body>
 
 </html>
