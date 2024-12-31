@@ -33,37 +33,16 @@
 <body>
 
   <!-- Header -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/logo1.png" alt="Logo">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="produk.html">Produk Hukum</a></li>
-          <li><a href="#services">Data</a></li>
-          <li class="dropdown"><a href="#"><span>Informasi dan Layanan</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="pengumuman.html">Pengumuman</a></li>
-              <li><a href="inpassing.html" class="active">Inpassing</a></li>
-              <li><a href="hitung-kebutuhan-jabatan.html">Tata Cara Perhitungan</a></li>
-              <li><a href="#">Rekomendasi Formasi</a></li>
-              <li><a href="#">Diklat</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted flex-md-shrink-0" href="https://ringwas.halal.go.id/login">Login</a>
-
-    </div>
-  </header>
+  <header id="header" class="header d-flex align-items-center fixed-top"></header>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+        highlightActiveLink();
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
 
   <!-- Main Content -->
   <main id="main">
